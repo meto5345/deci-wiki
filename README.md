@@ -50,6 +50,6 @@ npm run start
 
 The local server will initialize, typically at http://localhost:3000.
 
-# Legal Disclaimer
+### Legal Disclaimer
 
 This repository is an independent, community-led student initiative. It is not affiliated with, funded by, endorsed by, or officially connected to DECI, eYouth, or the Ministry of Communications and Information Technology (MCIT). All product names, logos, and brands are property of their respective owners.
