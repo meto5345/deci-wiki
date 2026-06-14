@@ -48,6 +48,8 @@ npm install
 # Start the local development server
 npm run start
 
+```
+
 The local server will initialize, typically at http://localhost:3000.
 
 ### Legal Disclaimer
