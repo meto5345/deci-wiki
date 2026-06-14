@@ -1,9 +1,18 @@
 // docusaurus.config.js
 
 const config = {
-  title: 'Community Tech Wiki',
-  tagline: 'An independent, open-source knowledge base and study guide',
+  title: 'DECI Community Wiki',
   favicon: 'img/favicon.ico',
+
+  stylesheets: [
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
+  ],
+  scripts: [
+    {
+      src: 'https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js',
+      defer: true,
+    },
+  ],
 
   url: 'https://deciwiki.netlify.app', // You can update this domain later
   baseUrl: '/',
@@ -42,7 +51,7 @@ const config = {
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Tech Wiki',
+      title: 'DECI Community Wiki',
       logo: {
         alt: 'Project Logo',
         src: 'img/logo.svg',
@@ -52,10 +61,10 @@ const config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: '📚 Wiki',
+          label: 'Wiki',
         },
-        {to: '/labs', label: '🔬 Labs', position: 'left'},
-        {to: '/quizzes', label: '✍️ Quizzes', position: 'left'},
+        {to: '/labs', label: 'Labs', position: 'left'},
+        {to: '/quizzes', label: 'Quizzes', position: 'left'},
         {to: '/blog', label: 'Blog', position: 'right'},
         {
           href: 'https://github.com/meto5345/deci-wiki',
