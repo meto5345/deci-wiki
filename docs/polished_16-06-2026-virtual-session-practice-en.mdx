@@ -1,0 +1,92 @@
+---
+id: 2026-06-16-virtual-session-practice-en
+title: "Virtual Session | Practice (English)"
+sidebar_label: "Virtual Session Practice (EN)"
+description: "Lab setup, passive reconnaissance, and vulnerability assessment tools."
+---
+
+# 16/6/2026 | Virtual Session | Practice | English
+
+This document provides a reference for the lab environment and the core tools used during reconnaissance and initial target information gathering exercises.
+
+---
+
+## Lab Environment
+
+### Attacker Machine
+- Kali Linux VM
+- Reference: [https://www.kali.org/get-kali/#kali-virtual-machines](https://www.kali.org/get-kali/#kali-virtual-machines)
+
+### Target Machine (Operating System)
+- Metasploitable 2
+- Reference: [https://docs.rapid7.com/metasploit/metasploitable-2/](https://docs.rapid7.com/metasploit/metasploitable-2/)
+
+### Target Machine (Web Application)
+- DVWA (Damn Vulnerable Web Application)
+- Reference: [https://github.com/digininja/DVWA](https://github.com/digininja/DVWA)
+
+### Docker Deployment
+**Usage Location:** Run inside your local lab or sandbox terminal.
+
+**Quick Deployment:**
+```bash
+docker run --rm -it -p 80:80 vulnerables/web-dvwa
+
+```
+
+## Reconnaissance & Vulnerability Assessment Tools
+### Whois (Web)
+
+Tool: Whois.com
+Usage Location: Use any web browser and search for a domain name.
+### Whois (CLI)
+
+Command:
+```bash
+man whois
+```
+
+Usage Location: Run directly from the Kali Linux terminal.
+### Google Dorking
+
+Example Query:
+```plaintext
+site:target.com filetype:pdf
+```
+
+Usage Location: Enter search operators directly into Google Search.
+
+Resources:
+* Google Dorking Master Guide
+* Google Hacking Database (GHDB)
+
+### theHarvester
+
+Command:
+```bash
+theHarvester -d target.com -b google
+```
+
+Usage Location: Run directly from the Kali Linux terminal.
+
+Resource: https://hackviser.com/tactics/tools/the-harvester
+
+Important Notes:
+* Recent versions of theHarvester no longer support native Google scraping due to CAPTCHA restrictions.
+* Many passive intelligence modules require API keys configured inside api-keys.yaml.
+* Review the official repository for supported modules and API requirements: https://github.com/laramies/theHarvester
+
+### Nmap
+
+Command:
+```bash
+nmap -sV [target_ip]
+```
+
+Usage Location: Run directly from the Kali Linux terminal.
+
+Practice Resource: TryHackMe – Further Nmap
+## SQL Injection Labs
+
+Platform: PortSwigger Web Security Academy
+Usage Location: Access through a web browser.

@@ -1,0 +1,95 @@
+---
+id: 2026-06-16-virtual-session-practice-ar
+title: "جلسة افتراضية | ممارسة (العربية)"
+sidebar_label: "ممارسة الجلسة الافتراضية (AR)"
+description: "إعداد المختبر وأدوات الاستطلاع السلبي وتقييم الثغرات."
+---
+
+<div dir="rtl">
+
+# 16/6/2026 | جلسة افتراضية | ممارسة | العربية
+
+يوفر هذا المستند مرجعًا لبيئة المختبر والأدوات الأساسية المستخدمة أثناء أنشطة الاستطلاع وجمع المعلومات الأولية عن الأهداف.
+
+---
+
+## بيئة المختبر
+
+### جهاز المهاجم
+- Kali Linux VM
+- المرجع: [https://www.kali.org/get-kali/#kali-virtual-machines](https://www.kali.org/get-kali/#kali-virtual-machines)
+
+### جهاز الهدف (نظام التشغيل)
+- Metasploitable 2
+- المرجع: [https://docs.rapid7.com/metasploit/metasploitable-2/](https://docs.rapid7.com/metasploit/metasploitable-2/)
+
+### جهاز الهدف (تطبيق الويب)
+- DVWA (تطبيق ويب ضعيف جداً)
+- المرجع: [https://github.com/digininja/DVWA](https://github.com/digininja/DVWA)
+
+### تشغيل Docker
+**مكان الاستخدام:** يتم التشغيل داخل بيئة المختبر أو الطرفية الخاصة بالـ Sandbox.
+
+**نشر سريع:**
+```bash
+docker run --rm -it -p 80:80 vulnerables/web-dvwa
+
+```
+
+## أدوات الاستطلاع وتقييم الثغرات
+### Whois (عبر الويب)
+
+الأداة: Whois.com
+مكان الاستخدام: استخدم أي متصفح ويب وأدخل اسم النطاق المطلوب.
+### Whois (سطر الأوامر)
+
+الأمر:
+```bash
+man whois
+```
+
+مكان الاستخدام: يتم تشغيله مباشرة من طرفية Kali Linux.
+### Google Dorking
+
+مثال استعلام:
+```plaintext
+site:target.com filetype:pdf
+```
+
+مكان الاستخدام: أدخل عوامل البحث مباشرة في محرك Google.
+
+مصادر إضافية:
+* دليل Google Dorking الشامل
+* قاعدة بيانات Google Hacking (GHDB)
+
+### theHarvester
+
+الأمر:
+```bash
+theHarvester -d target.com -b google
+```
+
+مكان الاستخدام: يتم تشغيله مباشرة من طرفية Kali Linux.
+
+مصدر إضافي: https://hackviser.com/tactics/tools/the-harvester
+
+ملاحظات مهمة:
+* الإصدارات الحديثة من theHarvester لم تعد تدعم جمع البيانات من Google بشكل مباشر بسبب قيود CAPTCHA.
+* العديد من وحدات جمع المعلومات السلبية تتطلب مفاتيح API يتم إعدادها داخل ملف api-keys.yaml.
+* راجع المستودع الرسمي لمعرفة الوحدات المدعومة ومتطلبات مفاتيح API: https://github.com/laramies/theHarvester
+
+### Nmap
+
+الأمر:
+```bash
+nmap -sV [target_ip]
+```
+
+مكان الاستخدام: يتم تشغيله مباشرة من طرفية Kali Linux.
+
+مورد تدريبي: TryHackMe – Further Nmap
+## مختبرات SQL Injection
+
+المنصة: PortSwigger Web Security Academy
+مكان الاستخدام: يمكن الوصول إليها من خلال متصفح الويب.
+</div>
